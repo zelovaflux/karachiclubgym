@@ -156,6 +156,7 @@ h1, h2, h3, h4, h5 {
     font-weight: 900;
     letter-spacing: 2px;
     animation: pulse 1.5s infinite;
+    text-align: center; /* Always centered */
 }
 
 @keyframes pulse {
@@ -436,16 +437,24 @@ h1, h2, h3, h4, h5 {
     
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 1.5rem; }
 
+    /* --- PAGE LOADER FIX --- */
+    .loader-text {
+        font-size: 1.4rem; /* Scaled down for mobile */
+        width: 100%;
+        padding: 0 20px;
+        line-height: 1.4;
+    }
+
     /* --- LOGO & MENU OVERLAP FIX --- */
     .logo { 
         font-size: 1.2rem !important; 
         position: relative;
-        z-index: 100 !important; /* Low z-index so the menu slides OVER it */
+        z-index: 100 !important;
     } 
     .hamburger { 
         display: block; 
         position: relative;
-        z-index: 100000 !important; /* Extremely high so X button is always visible */
+        z-index: 100000 !important;
     }
     
     /* Sleek Side Drawer */
@@ -460,7 +469,7 @@ h1, h2, h3, h4, h5 {
         justify-content: flex-start; 
         align-items: flex-start; 
         transition: right 0.4s ease-in-out;
-        z-index: 99999 !important; /* Higher than logo, Lower than Hamburger */
+        z-index: 99999 !important;
         gap: 0; 
         padding: 90px 25px 30px 25px; 
         margin: 0;
@@ -475,23 +484,23 @@ h1, h2, h3, h4, h5 {
         text-align: left; 
     }
     
-    /* NORMAL MENU LINKS (NOT THE BUTTON) */
+    /* NORMAL MENU LINKS */
     .nav-links a:not(.nav-btn) { 
         font-size: 1.1rem; 
         display: block; 
         padding: 14px 0; 
-        border-bottom: 1px solid rgba(255,255,255,0.05); /* Divider lines */
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     
-    /* FIX FOR "JOIN NOW" BUTTON */
+    /* "JOIN NOW" BUTTON FIX */
     .nav-links a.nav-btn { 
         display: flex !important; 
-        justify-content: center !important; /* Texts centered now */
+        justify-content: center !important;
         align-items: center !important;
         width: 100%; 
         margin-top: 25px; 
-        padding: 14px 28px !important; /* Restored button shape */
-        border: none !important; /* Removed divider line from button */
+        padding: 14px 28px !important; 
+        border: none !important; 
         border-radius: 8px !important;
     }
 
